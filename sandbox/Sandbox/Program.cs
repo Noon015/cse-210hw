@@ -1,14 +1,12 @@
 using System;
+using System.Security.Cryptography;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
-        Console.WriteLine("Does this work like i think it does?");
-
-        int num = 2;
-
-        Console.WriteLine($"My number is {num}");
+        Random randomGenerator = new Random();
+        int number = randomGenerator.Next(1, 11);
+        Console.WriteLine(number);
     }
 }
