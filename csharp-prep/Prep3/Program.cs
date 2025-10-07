@@ -30,8 +30,10 @@ class Program
                 Console.WriteLine("Would You like to go again? yes or no");
                 string choice = Console.ReadLine();
 
-                Console.WriteLine("Do you wish to continue, yes or no? ");
-                response = Console.ReadLine();
+                if (choice == "no")
+                {
+                    break;
+                }
             }
         }
 
