@@ -13,7 +13,7 @@ public class JournalEntry
     
     public string GeneratePrompt()
     {
-        // Create a list of prompts
+       
         List<string> prompts = new List<string>
         {
             "Who was the most interesting person I interacted with today?",
@@ -23,13 +23,9 @@ public class JournalEntry
             "If I had to do one thing over today, what would it be?"
         };
 
-        // Create a Random object
+       
         Random random = new Random();
-
-
         int index = random.Next(prompts.Count);
-
-        // Get the random prompt
         string ranGenPrompt = prompts[index];
         return ranGenPrompt;
 
