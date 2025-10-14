@@ -28,14 +28,14 @@ class Program
             {
                 Console.WriteLine("Please Enter Journal File: ");
                 Console.Write(">");
-                string myFile = "../test.txt";
+                string myFile = "..\\Develop02\\entries.csv";
                 myJournal.LoadEntries(myFile);
             }
             else if (answer == "4")
             {
                 Console.WriteLine("Name of file to save to: ");
                 Console.Write(">");
-                string myFile = "../test.txt";
+                string myFile = "..\\Develop02\\entries.csv";
                 myJournal.SaveEntries(myFile);
             }
             else if (answer == "5")
