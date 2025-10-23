@@ -3,9 +3,16 @@ using System.Collections.Concurrent;
 
 class Refrence
 {
-    private string _book = "Isaiah";
-    private string _chapter = "5";
-    private string _verseNumber = "20";
+    private string _book;
+    private int _chapter;
+    private int _verseNumber;
+
+    public Refrence(string book, int chapter,int verseNumber)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verseNumber = verseNumber;
+    }
 
     public string GetRefrence()
     {
