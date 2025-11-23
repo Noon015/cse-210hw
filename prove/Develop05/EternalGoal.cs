@@ -3,11 +3,11 @@ using System.Drawing;
 
 class EternalGoal:Goal
 {
-
-    int _timesCompleted = 0;
-    public EternalGoal(string name, int points, string description) : base(name, points, description)
+    int _timesCompleted;
+    
+    public EternalGoal(string name, int points, string description,int timesCompleted,bool isComplete) : base(name, points, description,isComplete)
     {
-        
+       _timesCompleted = timesCompleted; 
     }
 
     public override int ComputePoints()
@@ -22,5 +22,20 @@ class EternalGoal:Goal
         Console.WriteLine($"Your Goal {_name} has been completed");
         int totalPoints = this.ComputePoints();
         Console.WriteLine($"{totalPoints} points gained");
+    }
+
+    public override string SerializeToString()
+    {
+        string pointString = _points.ToString();
+        string timesCompleteString = _timesCompleted.ToString();
+
+        string fullSerialization = $"E|{_name}|{pointString}|{_description}|{timesCompleteString}|{_isComplete}";
+        return fullSerialization;
+    }
+
+    public override void DisplayGoal()
+    {
+        base.DisplayGoal();
+        Console.WriteLine($"Times Completed: {_timesCompleted}");
     }
 }

@@ -1,0 +1,3 @@
+G|Test Name|10|test description|False
+E|Flesh|100|What people are made of|0|False
+C|Find Hatred|100|Find the meaning of hate|False|500|0|5

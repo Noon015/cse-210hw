@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Specialized;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 
 class Goal
 {
@@ -8,11 +10,12 @@ class Goal
     protected string _description;
     protected bool _isComplete = false;
 
-    public Goal(string name, int points, string description)
+    public Goal(string name, int points, string description,bool isComplete)
     {
         _name = name;
         _points = points;
         _description =  description;
+        _isComplete = isComplete;
     }
 
     public virtual int ComputePoints()
@@ -28,10 +31,16 @@ class Goal
         }
     }
 
-    public void DisplayGoal()
+    public virtual void DisplayGoal()
     {
         Console.WriteLine($"Goal: {_name}");
         Console.WriteLine($"Description: {_description}");
+        Console.WriteLine($"Points: {_points}");
+    }
+
+    public void DisplayName()
+    {
+        Console.WriteLine(_name);
     }
 
     public virtual void CompleteGoal()
@@ -49,5 +58,12 @@ class Goal
         }
     }
 
+    public virtual string SerializeToString()
+    {
+        string point_string = _points.ToString();
+        string completion_string = _isComplete.ToString();
 
+        string fullSerialization = $"G|{_name}|{point_string}|{_description}|{completion_string}";
+        return fullSerialization;
+    }
 }
